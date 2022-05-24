@@ -176,26 +176,25 @@ class MainActivity : AppCompatActivity(){
                 re += "."
         }
         binding.btnEqual.setOnClickListener {
-            val intent = Intent(this, ResultActivity::class.java)
-            intent.apply {
-
-            }
-            startActivity(intent)
+            var result : Double = 0.0
             when(ch){
                 '+' -> {
                     var b = re.split('+')
                     var c = b[0].toDouble()
                     var d = b[1].toDouble()
+                    result = c + d
                     binding.result.text = ((c + d).toString())}
                 '-' -> {
                     var b = re.split('-')
                     var c = b[0].toDouble()
                     var d = b[1].toDouble()
+                    result = c - d
                     binding.result.text = ((c - d).toString())}
                 '*' -> {
                     var b = re.split('*')
                     var c = b[0].toDouble()
                     var d = b[1].toDouble()
+                    result = c * d
                     binding.result.text = ((c * d).toString())}
                 '/' -> {
                     var b = re.split('/')
@@ -204,8 +203,13 @@ class MainActivity : AppCompatActivity(){
                     if(d==0)
                         Toast.makeText(this, "0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show()
                     else
+                        result = (c.toDouble() / d.toDouble())
                         binding.result.text = ((c.toDouble() / d.toDouble()).toString())}
+
             }
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("calc", result)
+            startActivity(intent)
 
 
 
