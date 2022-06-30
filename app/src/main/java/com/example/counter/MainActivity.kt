@@ -215,13 +215,13 @@ class MainActivity : AppCompatActivity(){
 
         }
         binding.btnBack.setOnClickListener{
-            var b : String = " "
+            var b : String = "0"
             if(re=="0"){
                 Toast.makeText(this, "숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
             }
             else{
                 b = re.slice(IntRange(0, re.length-2))
-                Log.d("TAG", "onCreate: ${re.slice(IntRange(0, re.length-1))}")
+                //Log.d("TAG", "onCreate: ${re.slice(IntRange(0, re.length-1))}")
                 re = b
             }
             binding.textView.text = b

@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g1"
+        android:layout_width="0.5dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.842"/>
+
     <TextView
         android:id="@+id/re"
         android:layout_width="match_parent"
@@ -22,5 +29,16 @@
         android:textSize="60sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
+    <Button
+        android:id="@+id/goback"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Go Back"
+        android:textSize="60sp"
+        android:background="@color/teal_700"
+        app:layout_constraintTop_toTopOf="@id/g1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
