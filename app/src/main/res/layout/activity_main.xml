@@ -320,11 +320,14 @@
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="end"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@id/guideline5"
-        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        app:layout_constraintBottom_toBottomOf="@id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
